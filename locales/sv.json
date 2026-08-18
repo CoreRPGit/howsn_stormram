@@ -1,0 +1,11 @@
+{
+    "label_use_stormram": "Använd murbräcka",
+    "label_lock_door": "Lås dörr",
+    "error_no_permission": "Du kan inte göra detta!",
+    "error_no_doors_nearby": "Det finns inga dörrar i närheten av dig!",
+    "progress_locking_door": "Låser dörr...",
+    "progress_using_stormram": "Använder murbräcka...",
+    "cancelled": "Avbrutet!",
+    "door_opened": "Du öppnade dörren!",
+    "door_failed": "Du klarade det inte!"
+}

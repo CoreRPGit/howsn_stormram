@@ -2,11 +2,12 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'Howsn'
-description 'Stormram script for ox_doorlock!'
-version '1.0.1'
+description 'Stormram script - Reworked by Greve'
+version '2.0.0'
 
 shared_scripts {
-  '@ox_lib/init.lua'
+  '@ox_lib/init.lua',
+  'shared/config.lua'
 }
 
 client_scripts {

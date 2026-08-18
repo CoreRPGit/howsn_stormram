@@ -1,0 +1,11 @@
+{
+    "label_use_stormram": "Use stormram",
+    "label_lock_door": "Lock door",
+    "error_no_permission": "You cannot do this!",
+    "error_no_doors_nearby": "There are no doors near you!",
+    "progress_locking_door": "Locking door...",
+    "progress_using_stormram": "Using stormram...",
+    "cancelled": "Cancelled!",
+    "door_opened": "You opened the door!",
+    "door_failed": "You couldnt do it!"
+}

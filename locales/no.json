@@ -1,0 +1,11 @@
+{
+    "label_use_stormram": "Bruk stormram",
+    "label_lock_door": "Lås dør",
+    "error_no_permission": "Du kan ikke gjøre dette!",
+    "error_no_doors_nearby": "Det er ingen dører i nærheten av deg!",
+    "progress_locking_door": "Låser dør...",
+    "progress_using_stormram": "Bruker stormram...",
+    "cancelled": "Avbrutt!",
+    "door_opened": "Du åpnet døren!",
+    "door_failed": "Du klarte det ikke!"
+}

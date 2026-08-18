@@ -1,0 +1,11 @@
+{
+    "label_use_stormram": "Käytä muurinmurtajaa",
+    "label_lock_door": "Lukitse ovi",
+    "error_no_permission": "Et voi tehdä tätä!",
+    "error_no_doors_nearby": "Lähellä ei ole ovia!",
+    "progress_locking_door": "Lukitaan ovea...",
+    "progress_using_stormram": "Käytetään muurinmurtajaa...",
+    "cancelled": "Peruutettu!",
+    "door_opened": "Avasit oven!",
+    "door_failed": "Et onnistunut siinä!"
+}
