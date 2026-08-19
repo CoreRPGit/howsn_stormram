@@ -46,6 +46,8 @@ Set the UI/notification language in [shared/config.lua](shared/config.lua):
 Config.Locale = 'en' -- see locales/ for available languages
 ```
 
+<video controls src="preview-razzia-1.mp4" title="Razia Preview"></video>
+
 ## Credits
 
 Reworked by [Greve](https://github.com/grevef/) (animation/prop handling, locales, cleanup).
