@@ -1,4 +1,4 @@
-local STORMRAM_PROP = `w_me_batteringram`
+local STORMRAM_WEAPON = `WEAPON_BATTERINGRAM`
 local STORMRAM_DICT = 'anim@batteringram'
 local STORMRAM_CLIPS = {
     enter = 'breach_enter',
@@ -6,15 +6,19 @@ local STORMRAM_CLIPS = {
     exit = 'breach_exit',
 }
 local STORMRAM_ENTER_EXIT_DURATION = 420
-local STORMRAM_PROP_BONE = 28422 -- PH_R_Hand, model is pre-aligned to this bone with no offset
+local STORMRAM_PROP_BONE = 28422 -- PH_R_Hand
 local STORMRAM_PROP_OFFSET = vector3(0.0, 0.0, 0.0)
 local STORMRAM_PROP_ROTATION = vector3(0.0, 0.0, 0.0)
 
 local function attachStormramProp(playerPed)
-    lib.requestModel(STORMRAM_PROP)
+    RequestWeaponAsset(STORMRAM_WEAPON, 31, 0)
+
+    while not HasWeaponAssetLoaded(STORMRAM_WEAPON) do
+        Wait(0)
+    end
 
     local coords = GetEntityCoords(playerPed)
-    local prop = CreateObject(STORMRAM_PROP, coords.x, coords.y, coords.z, true, true, false)
+    local prop = CreateWeaponObject(STORMRAM_WEAPON, 0, coords.x, coords.y, coords.z, true, 1.0)
     local boneIndex = GetPedBoneIndex(playerPed, STORMRAM_PROP_BONE)
 
     AttachEntityToEntity(prop, playerPed, boneIndex,
@@ -22,7 +26,7 @@ local function attachStormramProp(playerPed)
         STORMRAM_PROP_ROTATION.x, STORMRAM_PROP_ROTATION.y, STORMRAM_PROP_ROTATION.z,
         true, true, false, true, 1, true)
 
-    SetModelAsNoLongerNeeded(STORMRAM_PROP)
+    RemoveWeaponAsset(STORMRAM_WEAPON)
 
     return prop
 end
@@ -47,6 +51,22 @@ local function stopStormramAnim(playerPed, prop)
     if prop and DoesEntityExist(prop) then
         DeleteEntity(prop)
     end
+end
+
+local function getDoorFaceCoords(door)
+    if door.doors then
+        local leafA, leafB = door.doors[1], door.doors[2]
+        local coordsA = leafA.entity and GetEntityCoords(leafA.entity) or leafA.coords
+        local coordsB = leafB.entity and GetEntityCoords(leafB.entity) or leafB.coords
+
+        return vec3((coordsA.x + coordsB.x) * 0.5, (coordsA.y + coordsB.y) * 0.5, (coordsA.z + coordsB.z) * 0.5)
+    end
+
+    if door.entity then
+        return GetEntityCoords(door.entity)
+    end
+
+    return door.coords
 end
 
 local function canUseStormram(action)
@@ -108,12 +128,13 @@ RegisterNetEvent('howsn_stormram:client:useStormram', function(source)
         return exports.qbx_core:Notify(locale('error_no_doors_nearby'), 'error')
     end
     
-    local coords = ClosestDoor.coords
+    local coords = getDoorFaceCoords(ClosestDoor)
     local entity = ClosestDoor.entity
     local playerPed = cache.ped
 
-    TaskTurnPedToFaceCoord(playerPed, coords.x, coords.y, coords.z, 2000)
-    Wait(500)
+    local playerCoords = GetEntityCoords(playerPed)
+    local heading = GetHeadingFromVector_2d(coords.x - playerCoords.x, coords.y - playerCoords.y)
+    SetEntityHeading(playerPed, heading)
 
     if ClosestDoor.state == 0 then 
         if lib.progressBar({
