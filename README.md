@@ -52,7 +52,8 @@ Config.Locale = 'en' -- see locales/ for available languages
 
 ## Credits
 
-Reworked by [Greve](https://github.com/grevef/) (animation/prop handling, locales, cleanup).
+Original script by [Howsn](https://github.com/Howsn/howsn_stormram). Reworked by
+[Greve](https://github.com/grevef/) (animation/prop handling, locales, cleanup).
 
 The battering ram model (`w_me_batteringram`) and breach animation (`anim@batteringram`) are from
 [Epixx1337/Battering-Ram](https://github.com/Epixx1337/Battering-Ram), which in turn credits
