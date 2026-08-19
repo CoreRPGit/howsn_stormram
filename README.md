@@ -3,6 +3,10 @@
 Use a **Stormram** item to break open (or lock) doors managed by **ox_doorlock**, with a real
 battering-ram animation and held prop.
 
+## Preview
+
+<video controls src="preview-razzia.mp4" title="Razzia Preview"></video>
+
 ## Dependencies
 
 - [ox_lib](https://github.com/overextended/ox_lib)
@@ -45,8 +49,6 @@ Set the UI/notification language in [shared/config.lua](shared/config.lua):
 ```lua
 Config.Locale = 'en' -- see locales/ for available languages
 ```
-
-<video controls src="preview-razzia-1.mp4" title="Razia Preview"></video>
 
 ## Credits
 
