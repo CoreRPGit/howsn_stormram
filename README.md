@@ -50,6 +50,9 @@ Set the UI/notification language in [shared/config.lua](shared/config.lua):
 Config.Locale = 'en' -- see locales/ for available languages
 ```
 
+# Todo
+- Better position of the prop in hand, so the player actually hold the handles on the stormram.
+
 ## Credits
 
 Original script by [Howsn](https://github.com/Howsn/howsn_stormram). Reworked by
