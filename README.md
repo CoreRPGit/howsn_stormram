@@ -5,7 +5,7 @@ battering-ram animation and held prop.
 
 ## Preview
 
-[▶ Watch the preview](preview-razzia.mp4)
+[▶ Watch the preview](https://streamable.com/85fcv0)
 
 ## Dependencies
 
