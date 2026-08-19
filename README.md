@@ -5,7 +5,7 @@ battering-ram animation and held prop.
 
 ## Preview
 
-<video controls src="preview-razzia.mp4" title="Razzia Preview"></video>
+[▶ Watch the preview](preview-razzia.mp4)
 
 ## Dependencies
 
